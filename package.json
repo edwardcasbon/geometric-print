@@ -1,0 +1,28 @@
+{
+  "name": "geometric-print",
+  "version": "1.0.0",
+  "description": "Personalised geometric prints",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:scss": "node-sass src/assets/scss/styles.scss dist/assets/css/styles.css --output-style compressed",
+    "build:html": "rsync -trma --include='*/' --include='*.html' --exclude='*' src/ dist/",
+    "build": "rm -rf dist && npm run build:html && npm run build:scss",
+    "start": "node scripts/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwardcasbon/geometric-print.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwardcasbon/geometric-print/issues"
+  },
+  "homepage": "https://github.com/edwardcasbon/geometric-print#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "node-sass": "^4.9.4",
+    "opn": "^5.4.0"
+  }
+}
